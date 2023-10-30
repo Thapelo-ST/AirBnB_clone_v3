@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-    creates flask app(HBNB) and registers the BluePrint app_views with flask instance HBNB
+    creates flask app(HBNB) and registers the
+    BluePrint app_views with flask instance HBNB
 """
 
 from os import getenv
@@ -27,6 +28,7 @@ def engine_teardown(exception):
     """
     storage.close()
 
+
 # Errot handling
 @app.errorhandler(404)
 def not_found(error):
@@ -41,4 +43,3 @@ if __name__ == '__main__':
     HOST = getenv('HBNB_API_HOST', '0.0.0.0')
     PORT = int(getenv('HBNB_API_HOST', '5000'))
     app.run(host=HOST, port=PORT, threaded=True)
-

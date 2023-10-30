@@ -16,6 +16,7 @@ def api_status():
     resp = {'status': 'OK'}
     return jsonify(resp)
 
+
 # Task Number 4
 @app_views.route('/stats', methods=['GET'])
 def get_stats():

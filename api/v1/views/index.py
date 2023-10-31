@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """index"""
 from api.v1.views import app_views
+
 from flask import jsonify
 from models import storage
 from models.user import User
@@ -28,3 +29,18 @@ def count():
     for cls in classes:
         count_dict[cls] = storage.count(classes[cls])
     return jsonify(count_dict)
+
+ 
+# Task Number 4
+@app_views.route('/stats', methods=['GET'])
+def get_stats():
+    """gets number of objects in each of the type"""
+    stats = {
+            'amenities': storage.count('Amenity'),
+            'cities': storage.count('City'),
+            'places': storage.count('Place'),
+            'reviews': storage.count('Review'),
+            'states': storage.count('State'),
+            'users': storage.count('Users')
+            }
+    return jsonify(stats)

@@ -26,7 +26,7 @@ def error_404(error):
     ''' handles 404 error and gives json formatted response '''
     return make_response(jsonify({'error': 'Not found'}), 404)
 
-  
+
 if __name__ == "__main__":
     host = getenv('HBNB_API_HOST')
     port = getenv('HBNB_API_PORT')

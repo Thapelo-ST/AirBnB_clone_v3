@@ -30,7 +30,7 @@ def count():
         count_dict[cls] = storage.count(classes[cls])
     return jsonify(count_dict)
 
- 
+
 # Task Number 4
 @app_views.route('/stats', methods=['GET'])
 def get_stats():
